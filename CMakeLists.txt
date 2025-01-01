@@ -90,7 +90,6 @@ include_directories(${ZTO_SRC_DIR}/osdep)
 # ZeroTier (ext)
 #include_directories(${ZTO_SRC_DIR}/ext/miniupnpc)
 include_directories(${ZTO_SRC_DIR}/ext/libnatpmp)
-include_directories(${ZTO_SRC_DIR}/ext/nlohmann)
 include_directories(${ZTO_SRC_DIR}/ext/prometheus-cpp-lite-1.0/core/include)
 include_directories(${ZTO_SRC_DIR}/ext/prometheus-cpp-lite-1.0/simpleapi/include)
 # libzt
@@ -354,8 +353,11 @@ set(ZT_FLAGS "${ZT_FLAGS} -DZT_SDK=1")
 set(ZT_FLAGS "${ZT_FLAGS} -DZT_USE_MINIUPNPC=1")
 set(ZT_FLAGS "${ZT_FLAGS} -D_USING_LWIP_DEFINITIONS_=0")
 
+
+set(ZT_FLAGS "${ZT_FLAGS} -DOMIT_JSON_SUPPORT=1")
+
 if (NOT BUILD_WIN)
-    set(ZT_FLAGS "${ZT_FLAGS} -DOMIT_JSON_SUPPORT=1 -Wno-unused-parameter")
+    set(ZT_FLAGS "${ZT_FLAGS} -Wno-unused-parameter")
     set(LWIP_FLAGS "${LWIP_FLAGS} -Wno-tautological-constant-out-of-range-compare -Wno-parentheses-equality")
 endif()
 
