@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Checkout submodules
       run: git submodule update --init
@@ -18,7 +18,7 @@ jobs:
     - name: Build
       run: ./build.sh host-jar "release"
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       with:
         path: dist
 
