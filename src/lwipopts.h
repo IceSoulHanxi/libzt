@@ -2453,7 +2453,7 @@ happening sooner than they should.
  * indiscriminately pass all inbound IPv6 multicast traffic to lwIP.
  */
 #if !defined LWIP_IPV6_MLD || defined __DOXYGEN__
-#define LWIP_IPV6_MLD                   LWIP_IPV6
+#define LWIP_IPV6_MLD                   0
 #endif
 
 /**
@@ -3452,3 +3452,5 @@ happening sooner than they should.
  */
 
 #endif /* LWIP_HDR_OPT_H */
+
+#define LWIP_IGMP 1

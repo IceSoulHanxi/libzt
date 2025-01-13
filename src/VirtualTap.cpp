@@ -540,6 +540,7 @@ void zts_lwip_init_interface(void* tapref, const InetAddress& ip)
         else {
             n = new struct netif;
             isNewNetif = true;
+            ip4_set_default_multicast_netif(n);
             netifCount++;
         }
 
